@@ -2,7 +2,7 @@
 To use SAM2-Large as an annotator tool model for bounding boxes. 
 
 ### Working
-This repository uses Docker and gRPC to create a dynamic and robust bounding box generator on any kind of images. This is however, specifically designed for SKU110K style dataset. Hence main target of this repository is to generate bounding boxes on SKUs as precisely as possible, allowing false positives to exist as a drawback, which would have to be addressed by human annotators.
+This repository uses Docker and gRPC to create a dynamic and robust bounding box generator on any kind of images. This is however, specifically designed for `SKU110K style dataset`. Hence main target of this repository is to generate bounding boxes on SKUs as precisely as possible, allowing false positives to exist as a drawback, which would have to be addressed by human annotators.
 
 ### gRPC
 To build this repo's proto file use below command
