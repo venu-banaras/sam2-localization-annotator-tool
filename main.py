@@ -34,8 +34,8 @@ class SamToolServicer(sam_tool_pb2_grpc.SamToolServicer):
 
     def __init__(self, device):
         
-        self.sam2_checkpoint = "sam2.1_hiera_large.pt"
-        self.model_cfg = "sam2.1_hiera_l.yaml"
+        self.sam2_checkpoint = "models/sam2.1_hiera_large.pt"
+        self.model_cfg = "models/sam2.1_hiera_l.yaml"
 
         self.sam2 = build_sam2(self.model_cfg, self.sam2_checkpoint, device=device, apply_postprocessing=False)
 
