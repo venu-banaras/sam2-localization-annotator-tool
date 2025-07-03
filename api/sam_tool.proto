@@ -1,0 +1,18 @@
+syntax = 'proto3';
+
+package SamTool;
+
+message features{
+    repeated string image = 1;
+    int32 height = 2;
+    int32 width = 3;
+}
+
+message results{
+    repeated string boxes = 1;
+    // int32 
+}
+
+service SamTool{
+    rpc main(features) returns (results){}
+}
