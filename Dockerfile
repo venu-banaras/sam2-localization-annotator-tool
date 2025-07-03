@@ -25,15 +25,17 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
 
 ADD . /app
 WORKDIR /app
-# Debug: Verify `requirements.txt`
+
 RUN ls -la /app && cat /app/requirements.txt
 
 
 RUN python3.10 -m pip install --upgrade pip setuptools wheel && \
     python3.10 -m pip install -r requirements.txt --index-url https://pypi.org/simple
     
+# This version is useful in case GPU are older with cuda-11.8
 RUN pip install torch==2.3.1+cu118 torchvision==0.18.1+cu118 torchaudio==2.3.1+cu118 -f https://download.pytorch.org/whl/torch_stable.html
     
 EXPOSE 5000
+# Auto serves this file once container is created
 ENTRYPOINT ["python3","-u","/app/main.py"]
 WORKDIR /app

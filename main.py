@@ -25,7 +25,7 @@ from hydra.core.global_hydra import GlobalHydra
 
 GlobalHydra.instance().clear()
 initialize(config_path="")
-cfg = compose(config_name="sam2.1_hiera_l.yaml")
+cfg = compose(config_name="models/sam2.1_hiera_l.yaml")
 
 # For message greater than 50 MB
 MAX_MESSAGE_SIZE = 55 * 1024 * 1024

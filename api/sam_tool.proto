@@ -2,12 +2,14 @@ syntax = 'proto3';
 
 package SamTool;
 
+// Needs image and its height and width
 message features{
     repeated string image = 1;
     int32 height = 2;
     int32 width = 3;
 }
 
+// Returns numpy format bounding boxes
 message results{
     repeated string boxes = 1;
     // int32 
